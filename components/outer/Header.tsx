@@ -10,19 +10,37 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(false), []);
+  useEffect(() => {
+    setMounted(true);
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsAffixed(scrollY > 50); // Show logo after scrolling 50px
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
       data-affix={isAffixed}
-      className="sticky inset-0 top-0 z-50 border-b border-white/10 bg-background max-w-screen overflow-x-hidden  px-2 pt-2 data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:data-[affix=true]:shadow-[0_0_16px_0_black]/80 transition-shadow duration-300 selection:bg-neutral-500"
+      className="sticky inset-0 top-0 z-50 border-b border-white/10 bg-background max-w-screen overflow-x-hidden px-2 pt-2 data-[affix=true]:shadow-[0_0_16px_0_black]/8 dark:data-[affix=true]:shadow-[0_0_16px_0_black]/80 transition-shadow duration-300 selection:bg-neutral-500"
     >
       <div
         className="screen-line-before screen-line-after mx-auto flex h-12 items-center justify-between gap-2 border-x border-edge border-white/10 px-2 after:z-1 after:transition-[background-color] sm:gap-4 md:max-w-3xl"
         data-header-container="true"
       >
         <a href="/" aria-label="Home" className="[&_svg]:h-8">
-          <Logo style={{ opacity: 1, transform: "translateY(0px)" }} />
+          <Logo
+            style={{
+              opacity: isAffixed ? 1 : 0,
+              transform: isAffixed ? "translateY(0px)" : "translateY(-10px)",
+              transition:
+                "opacity 300ms ease-in-out, transform 300ms ease-in-out",
+            }}
+          />
         </a>
 
         <div className="h-full flex-1 border-x border-edge border-white/10 sm:-ml-2"></div>
@@ -30,7 +48,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-4 sm:flex hover:text-white transition-all duration-300">
           <a
-            href="/"
+            href="https://drive.google.com/file/d/1CWt9WLw9Q_1b0jCiwooy5FH-1jjxbrI7/view?usp=sharing"
             className="font-mono text-sm font-medium text-foreground transition-all duration-300"
           >
             Resume
@@ -60,21 +78,6 @@ export default function Header() {
             <span className="sr-only">GitHub</span>
           </a>
 
-          {/* Theme Toggle */}
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="inline-flex h-8 w-8 items-center justify-center gap-2 whitespace-nowrap rounded-full border border-input bg-background text-sm font-medium outline-none transition-all hover:bg-accent hover:text-accent-foreground active:scale-[0.98]"
-            >
-              {theme === "dark" ? (
-                <Sun className="size-5" />
-              ) : (
-                <MoonStar className="size-5" />
-              )}
-              <span className="sr-only">Toggle Theme</span>
-            </button>
-          )}
-
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             data-state={isMenuOpen ? "open" : "closed"}
@@ -91,13 +94,13 @@ export default function Header() {
         <div className="sm:hidden overflow-hidden p-4 border-t border-edge border-white/10 transition-all duration-300 ease-in-out">
           <nav className="flex flex-col gap-4 hover:text-white transition-all duration-300">
             <a
-              href="/"
+              href="https://drive.google.com/file/d/1CWt9WLw9Q_1b0jCiwooy5FH-1jjxbrI7/view?usp=sharing"
               className="font-mono text-sm font-medium text-foreground hover:text-white transition-all duration-300"
             >
               Resume
             </a>
             <a
-              href="/Projects"
+              href="/projects"
               className="font-mono text-sm font-medium text-muted-foreground"
             >
               Projects

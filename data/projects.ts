@@ -2,6 +2,7 @@ import uptime24 from "@/assets/images/uptime24.png";
 import clandr from "@/assets/images/clandr.png";
 import todlerrui from "@/assets/images/todlerrui.png";
 import { Project } from "@/types";
+import jurn from "@/assets/images/jurn.png";
 import reactstarterplus from "@/assets/images/react-starter-plus.png";
 
 
@@ -28,7 +29,7 @@ export const PROJECTS_DATA: Project[] = [
     tags: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     videoSrc: "/assets/videos/atomix.mp4",
     imageSrc: todlerrui,
-    liveUrl: "https://ui-todlerr.vercel.app/",
+    liveUrl: "https://github.com/0bhishek/todlerrui",
     githubUrl: "https://github.com/0bhishek/todlerrui",
   },
     {
@@ -40,8 +41,8 @@ export const PROJECTS_DATA: Project[] = [
     tags: ["React Native", "Expo", "Next.js", "PostgreSQL"],
     videoSrc: "/assets/videos/clandr.mp4",
     imageSrc: clandr,
-    liveUrl: "https://clandr.vercel.app/",
-    githubUrl: "https://github.com/0bhishek/clandr",
+    liveUrl: "https://github.com/iCoderabhishek/clandr-mobile-app.git",
+    githubUrl: "https://github.com/iCoderabhishek/clandr-mobile-app.git",
   },
   {
       
@@ -52,8 +53,8 @@ export const PROJECTS_DATA: Project[] = [
       "A minimalist journal app built with React Native. It allows users to create, edit, and delete journal entries, as well as view and search through them.",
     tags: ["React Native", "Expo", "NativeWind", "AsyncStorage"],
     videoSrc: "/assets/videos/jurn.mp4",
-    imageSrc: clandr,
-    liveUrl: "https://jurn.vercel.app/",
+    imageSrc: jurn,
+    liveUrl: "https://github.com/iCoderabhishek/Jurn-minimalistic-journal-app.git",
     githubUrl: "https://github.com/iCoderabhishek/Jurn-minimalistic-journal-app.git",
   },
   {
@@ -67,16 +68,4 @@ export const PROJECTS_DATA: Project[] = [
     liveUrl: "https://npmjs.com/package/react-starter-plus",
     githubUrl: "https://github.com/iCoderabhishek/npm-package.git",
   }
-  // {
-  //   id: 4,
-  //   title: "Weblytics",
-  //   date: "Feb 2025 - Mar 2025",
-  //   description:
-  //     "Track visitor behavior, monitor key metrics, and optimize performance effortlessly with a lightweight, privacy-friendly analytics platform.",
-  //   tags: ["Next.js", "TypeScript", "Analytics", "Data Visualization"],
-  //   videoSrc: "/assets/videos/weblytics.mp4",
-  //   imageSrc: weblytics,
-  //   liveUrl: "https://analytics-code.vercel.app/",
-  //   githubUrl: "https://github.com/Mihir2423/analytics",
-  // },
 ];

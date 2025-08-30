@@ -10,7 +10,7 @@ export const ProjectItem = ({ project }: { project: Project }) => {
   return (
     <div className="rounded-sm cursor-pointer overflow-hidden bg-[#2A2A2A] hover:bg-[#2F2F2F] transition-all duration-300 border border-gray-700 shadow-lg flex flex-col h-full">
       {/* Video / Image */}
-      <div className="relative w-full h-48 bg-black p-2">
+      <div className="relative w-full aspect-[16/9] bg-black p-2">
         {!isVideoLoaded && project.imageSrc && (
           <Image
             src={project.imageSrc}
@@ -39,7 +39,7 @@ export const ProjectItem = ({ project }: { project: Project }) => {
           {project.title} <ExternalLink size={16} />
         </h3>
         <span className="text-xs text-gray-400">{project.date}</span>
-        <p className="text-sm text-neutral-300 flex-grow">
+        <p className="text-sm text-neutral-300 flex-grow line-clamp-3">
           {project.description}
         </p>
 
