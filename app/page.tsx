@@ -8,7 +8,7 @@ import BlogCard from "@/components/profile/BlogCard";
 import Header from "@/components/outer/Header";
 import LearnTimeline from "@/components/profile/LearnCard";
 import AnimatedStatement from "@/components/ui/AnimatedText";
-import me from "@/assets/images/me.png";
+import abhishek from "@/assets/images/abhishek.png";
 import { USER } from "@/data/user";
 import { Logo } from "@/components/ui/Logo";
 
@@ -65,11 +65,13 @@ function App() {
             {/* Hide avatar on screens < 426px */}
             <div className="hidden sm:block avatar-container">
               <Image
-                src="https://pbs.twimg.com/profile_images/1792263106363564032/84ENGWSS_400x400.jpg"
-                alt="crosshair image"
+                src={abhishek}
+                alt="profile"
                 width={150}
                 height={150}
                 priority
+                placeholder="blur"
+                blurDataURL="data:image/png;base64,..."
                 className="object-contain rounded-full w-20 xs:w-24 sm:w-28 lg:w-32 h-20 xs:h-24 sm:h-28 lg:h-32"
               />
             </div>
