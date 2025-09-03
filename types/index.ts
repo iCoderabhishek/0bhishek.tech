@@ -4,7 +4,7 @@ export interface Project {
   date: string;
   description: string;
   tags: string[];
-  videoSrc: string;
+  videoSrc?: string;
   imageSrc: string | any;
   liveUrl: string;
   githubUrl?: string;
