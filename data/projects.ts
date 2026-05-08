@@ -29,7 +29,7 @@ export const PROJECTS_DATA: Project[] = [
     tags: ["Next.js", "TypeScript", "Web3", "TailwindCSS"],
     // videoSrc: "/assets/videos/uptime24.mp4",
     imageSrc: uptime24,
-    liveUrl: "https://www.uptime24.online/",
+    liveUrl: "https://app.uptime24.online/",
     githubUrl: "https://github.com/iCoderabhishek/uptime-24.git",
   },
 
