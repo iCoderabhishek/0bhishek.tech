@@ -56,3 +56,13 @@ export interface LearningItem {
   note: string;
   tags: string[];
 }
+
+export interface ExperienceItem {
+  role: string;
+  company: string;
+  location: string;
+  date: string;
+  bullets: string[];
+  tags?: string[];
+  url?: string;
+}

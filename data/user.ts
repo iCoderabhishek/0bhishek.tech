@@ -7,28 +7,28 @@ export const USER: User = {
   username: "0bhishek",
   gender: "Male",
   pronouns: "He/Him",
-  bio: "Full Stack Developer. I build things, like to solve real world problems.",
+  bio: "Full Stack Engineer. I build and ship full-stack and mobile products that solve real problems.",
   flipSentences: [
     "Abhishek Jha",
-    "Software Developer",
-    "I build things, like to solve real world problems",
+    "Software Engineer",
+    "Architecting and building scalable full-stack and mobile products.",
   ],
-  aniamtedText:[
-    "Full Stack Developer",
-    "React Native Developer",
-    "A Passionate Learner",
-    "A Curious Mind",
+  aniamtedText: [
+    "Full Stack Engineer.",
+    "Mobile App Engineer.",
+    "A Builder.",
+    "A Curious Mind.",
   ],
   address: "Kolkata, West Bengal, India",
   phoneNumber: "+91-9876543210",
-  email: "iam@gmail.com",
+  email: "iamabhishek1310@gmail.com",
   website: "https://0bhishek.tech",
   otherWebsites: [
     "https://github.com/0bhishek",
     "https://x.com/0bhishek",
     "https://linkedin.com/in/icoderabhishek",
   ],
-  jobTitle: "Software Developer",
+  jobTitle: "Software Engineer",
   jobs: [
     {
       title: "Independent Software Developer",
