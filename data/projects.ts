@@ -34,7 +34,7 @@ export const PROJECTS_DATA: Project[] = [
   },
 
   {
-    id: 2,
+    id: 3,
     title: "Todlerr UI",
     date: "Oct 2024 - Nov 2024",
     description:
@@ -46,7 +46,7 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: "https://github.com/0bhishek/todlerrui",
   },
   {
-    id: 3,
+    id: 4,
     title: "Clandr",
     date: "July 2025",
     description:
@@ -59,7 +59,7 @@ export const PROJECTS_DATA: Project[] = [
   },
   {
 
-    id: 4,
+    id: 5,
     title: 'Jurn - Minimalist Journal Native App ',
     date: "July 2025",
     description:
@@ -71,7 +71,7 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: "https://github.com/iCoderabhishek/Jurn-minimalistic-journal-app.git",
   },
   {
-    id: 5,
+    id: 6,
     title: "React Starter Plus",
     date: "August 2025",
     description: "A npm starter template that lets you scaffold React apps with JS/TS, TailwindCSS V4, CICD and more.",

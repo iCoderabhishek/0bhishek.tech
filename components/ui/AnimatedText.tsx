@@ -48,7 +48,7 @@ const AnimatedStatement = () => {
     }, 4000); // Change text every 4 seconds
 
     return () => clearInterval(interval);
-  }, [texts.length]);
+  }, []);
 
   const currentText = texts[index];
   const words = currentText.split(" ");
