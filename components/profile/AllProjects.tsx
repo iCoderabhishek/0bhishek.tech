@@ -3,7 +3,7 @@ import { ProjectItem } from "./ProjectItem";
 
 export const AllProjectsCard = () => {
   return (
-    <div className="relative max-w-full  md:max-w-4xl lg:max-w-4xl mx-auto   pl-15 pr-15 lg:p-6 overflow-hidden">
+    <div className="relative max-w-full md:max-w-4xl lg:max-w-4xl mx-auto px-5 sm:px-15 lg:p-6 overflow-hidden">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         {PROJECTS_DATA.map((project, id) => (
           <a

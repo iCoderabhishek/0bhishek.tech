@@ -1,16 +1,29 @@
 import uptime24 from "@/assets/images/uptime24.png";
 import clandr from "@/assets/images/clandr.png";
 import todlerrui from "@/assets/images/todlerrui.png";
+import findash from "@/assets/images/findash.png";
 import { Project } from "@/types";
 import jurn from "@/assets/images/jurn.png";
 import reactstarterplus from "@/assets/images/react-starter-plus.png";
 
 
 export const PROJECTS_DATA: Project[] = [
+  // a financial dashboard called "findash"
   {
     id: 1,
+    title: "Findash",
+    date: "March 2025 - Present",
+    description:
+      "A financial dashboard where users can track their expenses and income. Combines Web3 incentives with transparent reliability tracking.",
+    tags: ["React.js", "Zustand", "LocalDB", "Aceternity UI"],
+    imageSrc: findash,
+    liveUrl: "https://findash.0bhishek.tech",
+    githubUrl: "https://github.com/iCoderabhishek/Findash.git",
+  },
+  {
+    id: 2,
     title: "Uptime24",
-    date: "July 2025 - Present",
+    date: "July 2025 - Sept 2025",
     description:
       "A decentralized uptime monitoring platform where users validate website status. Combines Web3 incentives with transparent reliability tracking.",
     tags: ["Next.js", "TypeScript", "Web3", "TailwindCSS"],
@@ -32,7 +45,7 @@ export const PROJECTS_DATA: Project[] = [
     liveUrl: "https://toddler-ui.vercel.app/",
     githubUrl: "https://github.com/0bhishek/todlerrui",
   },
-    {
+  {
     id: 3,
     title: "Clandr",
     date: "July 2025",
@@ -45,7 +58,7 @@ export const PROJECTS_DATA: Project[] = [
     githubUrl: "https://github.com/iCoderabhishek/clandr-mobile-app.git",
   },
   {
-      
+
     id: 4,
     title: 'Jurn - Minimalist Journal Native App ',
     date: "July 2025",

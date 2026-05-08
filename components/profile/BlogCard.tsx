@@ -1,10 +1,10 @@
 import React from "react";
-import { ExternalLink, Calendar } from "lucide-react";
+import { ArrowUpRight, Calendar } from "lucide-react";
 import { BLOG_DATA } from "@/data/blogs";
 
 const BlogCard = () => {
   return (
-    <div className="relative max-w-full  md:max-w-4xl lg:max-w-4xl mx-auto rounded-sm  pl-15 pr-15 lg:p-4 overflow-hidden">
+    <div className="relative max-w-full md:max-w-4xl lg:max-w-4xl mx-auto rounded-sm px-5 sm:px-15 lg:p-4 overflow-hidden">
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 cursor-pointer">
         {BLOG_DATA.slice(0, 2).map((post) => (
           <a
@@ -12,69 +12,64 @@ const BlogCard = () => {
             key={post.id}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-sm border border-gray-700 bg-[#2A2A2A] p-5 transition-all duration-300 hover:border-gray-600 hover:bg-[#2F2F2F]"
+            className="group relative overflow-hidden rounded-sm border border-foreground/15 bg-foreground/4 p-5 transition-all duration-300 hover:border-foreground/25 hover:bg-foreground/7 hover:-translate-y-0.5 flex flex-col"
           >
-            {/* Header */}
-            <div className="flex items-start justify-between mb-3">
-              <div className="flex items-center gap-2 text-xs text-gray-400">
-                <Calendar size={12} />
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime}</span>
-              </div>
-              <span className="opacity-60 group-hover:opacity-100 transition-opacity hover:scale-110 transform duration-200">
-                <ExternalLink size={16} />
-              </span>
+            {/* Date caption */}
+            <div className="flex items-center gap-2 text-xs text-foreground/55 mb-2">
+              <Calendar size={12} />
+              <span>{post.date}</span>
+              <span>·</span>
+              <span>{post.readTime}</span>
             </div>
 
-            {/* Content */}
-            <h3 className="font-semibold text-base leading-tight mb-3 text-white group-hover:text-gray-100">
-              {post.title}
+            {/* Title with animated arrow */}
+            <h3 className="text-xl font-semibold tracking-tight leading-tight mb-3 text-foreground flex items-start gap-2">
+              <span className="grow">{post.title}</span>
+              <ArrowUpRight
+                size={18}
+                className="text-foreground/60 shrink-0 mt-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-0.5 group-hover:text-foreground"
+              />
             </h3>
 
-            <p className="text-sm text-neutral-300 mb-4 leading-relaxed font-light line-clamp-3">
+            {/* Description */}
+            <p className="text-base text-foreground/85 leading-relaxed mb-4 line-clamp-3">
               {post.description}
             </p>
 
             {/* Tags */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-auto">
               {post.tags.map((tag, i) => (
                 <span
                   key={i}
-                  className="text-xs px-3 py-1 border border-white border-opacity-30 rounded-full text-gray-300 font-medium hover:border-opacity-60 transition-colors"
+                  className="text-xs px-3 py-1 border border-foreground/25 rounded-full text-foreground/70 font-medium hover:border-foreground/50 transition-colors"
                 >
                   {tag}
                 </span>
               ))}
             </div>
+
+            {/* Violet hairline that scales in on hover */}
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-violet-500/70 dark:bg-violet-400/65 origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+            />
           </a>
         ))}
       </div>
 
       {/* Shadow below BlogCard */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 h-32 lg:h-24 lg:w-full w-[calc(100%-120px)] mx-auto bg-gradient-to-t from-[#1E1E1E] via-[#1e1e1eef] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 z-10 h-32 lg:h-24 w-full bg-linear-to-t from-background via-background/90 to-transparent" />
 
       {/* Show More button */}
       <a
-        className="absolute bottom-5 left-1/2 z-[11] flex -translate-x-1/2 items-center gap-1 rounded-sm border bg-neutral-700/40 px-2 py-1 text-xs text-neutral-200"
         href="/blogs"
+        className="group absolute bottom-5 left-1/2 z-11 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full border border-foreground/15 bg-background/80 backdrop-blur-sm px-4 py-1.5 text-sm text-foreground/70 hover:text-foreground hover:border-foreground/35 transition-colors"
       >
         Show More
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="lucide lucide-arrow-up-right"
-        >
-          <path d="M7 7h10v10"></path>
-          <path d="M7 17 17 7"></path>
-        </svg>
+        <ArrowUpRight
+          size={14}
+          className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+        />
       </a>
     </div>
   );

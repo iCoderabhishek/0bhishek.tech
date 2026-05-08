@@ -62,7 +62,7 @@ const AnimatedStatement = () => {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="font-mono text-md text-balanceb  text-neutral-300 dark:text-neutral-300 select-none"
+          className="font-mono text-md text-balanceb text-foreground/70 select-none"
           aria-label={currentText}
         >
           {words.map((word, i) => (
